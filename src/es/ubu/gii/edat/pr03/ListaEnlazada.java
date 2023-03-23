@@ -15,7 +15,7 @@ public class ListaEnlazada<E> extends AbstractList<E> {
         this.priemro = null;
         this.ultimo = null;
     }
-
+//TODO implementar el iterador.
     @Override
     public E get(int index) {
         if (index < 0 || index >= tamano) {
@@ -47,22 +47,24 @@ public class ListaEnlazada<E> extends AbstractList<E> {
 
     @Override
     public E remove(int index) {
+        //verifico que el indice no está fuera de nustra lista.
         if (index < 0 || index >= tamano) {
             throw new IndexOutOfBoundsException("indice fure del limite del array");
         }
+        //nodo actual
         Nodo<E> nodo = this.priemro;
+        //nodo anterior al actual
         Nodo<E> anterior = null;
+
         for (int i = 0; i < index; i++) {
             anterior = nodo;
             nodo = nodo.siguiente;
         }
+
         if (nodo == this.priemro) {
             this.priemro = nodo.siguiente;
         }else {
             anterior.siguiente = nodo.siguiente;
-        }
-        if (nodo == this.ultimo) {
-            this.ultimo = nodo.siguiente;
         }
         tamano --;
         return nodo.dato;
