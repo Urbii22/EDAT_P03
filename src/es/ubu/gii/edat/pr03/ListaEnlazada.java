@@ -47,7 +47,7 @@ public class ListaEnlazada<E> extends AbstractList<E> {
 
     @Override
     public E remove(int index) {
-        //verifico que el indice no está fuera de nustra lista.
+        //verifico que el índice no está fuera de nuestra lista.
         if (index < 0 || index >= tamano) {
             throw new IndexOutOfBoundsException("indice fuera del limite del array");
         }
