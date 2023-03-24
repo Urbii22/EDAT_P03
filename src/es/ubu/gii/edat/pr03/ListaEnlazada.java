@@ -82,6 +82,53 @@ public class ListaEnlazada<E> extends AbstractList<E> {
         this.priemro = null;
         this.ultimo = null;
     }
+    protected class iterdaor implements ListIterator<E> {
+
+        @Override
+        public boolean hasNext() {
+            return false;
+        }
+
+        @Override
+        public E next() {
+            return null;
+        }
+
+        @Override
+        public boolean hasPrevious() {
+            return false;
+        }
+
+        @Override
+        public E previous() {
+            return null;
+        }
+
+        @Override
+        public int nextIndex() {
+            return 0;
+        }
+
+        @Override
+        public int previousIndex() {
+            return 0;
+        }
+
+        @Override
+        public void remove() {
+
+        }
+
+        @Override
+        public void set(Object o) {
+
+        }
+
+        @Override
+        public void add(Object o) {
+
+        }
+    }
     //TODO hacer todos los metodos a sobreescribir
 
     //el metood clear pondrá la lista donde guardo los nodos a 0, null.
