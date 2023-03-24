@@ -86,50 +86,47 @@ public class ListaEnlazada<E> extends AbstractList<E> {
 
         @Override
         public boolean hasNext() {
-            return false;
+            throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
         public E next() {
-            return null;
+            throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
         public boolean hasPrevious() {
-            return false;
+            throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
         public E previous() {
-            return null;
+            throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
         public int nextIndex() {
-            return 0;
+            throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
         public int previousIndex() {
-            return 0;
+            throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
         public void remove() {
-
+            throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
         public void set(Object o) {
-
+            throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
         public void add(Object o) {
-
+            throw new UnsupportedOperationException("Not supported yet.");
         }
     }
-    //TODO hacer todos los metodos a sobreescribir
-
-    //el metood clear pondrá la lista donde guardo los nodos a 0, null.
 }
