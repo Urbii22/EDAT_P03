@@ -4,7 +4,7 @@ import java.util.*;
 
 public class ListaEnlazada<E> extends AbstractList<E> {
 
-    protected Nodo<E> priemro;
+    protected Nodo<E> primero;
     protected Nodo<E> ultimo;
     private int tamano;
 
@@ -12,16 +12,16 @@ public class ListaEnlazada<E> extends AbstractList<E> {
 
     public ListaEnlazada() {
         tamano = 0;
-        this.priemro = null;
+        this.primero = null;
         this.ultimo = null;
     }
-//TODO implementar el iterador.
+
     @Override
     public E get(int index) {
         if (index < 0 || index >= tamano) {
-            throw new IndexOutOfBoundsException("indice fure del limite del array");
+            throw new IndexOutOfBoundsException("indice fuera del limite del array");
         }
-        Nodo<E> nodo = this.priemro;
+        Nodo<E> nodo = this.primero;
         for (int i = 0; i < index; i++) {
             nodo = nodo.siguiente;
         }
@@ -36,7 +36,7 @@ public class ListaEnlazada<E> extends AbstractList<E> {
     public boolean add(E elemento) {
         Nodo<E> nuevo = new Nodo<>(elemento);
         if (tamano == 0) {
-            this.priemro = nuevo;
+            this.primero = nuevo;
         }else{
             this.ultimo.siguiente = nuevo;
         }
@@ -49,10 +49,10 @@ public class ListaEnlazada<E> extends AbstractList<E> {
     public E remove(int index) {
         //verifico que el indice no está fuera de nustra lista.
         if (index < 0 || index >= tamano) {
-            throw new IndexOutOfBoundsException("indice fure del limite del array");
+            throw new IndexOutOfBoundsException("indice fuera del limite del array");
         }
         //nodo actual
-        Nodo<E> nodo = this.priemro;
+        Nodo<E> nodo = this.primero;
         //nodo anterior al actual
         Nodo<E> anterior = null;
 
@@ -61,8 +61,8 @@ public class ListaEnlazada<E> extends AbstractList<E> {
             nodo = nodo.siguiente;
         }
 
-        if (nodo == this.priemro) {
-            this.priemro = nodo.siguiente;
+        if (nodo == this.primero) {
+            this.primero = nodo.siguiente;
         }else {
             anterior.siguiente = nodo.siguiente;
         }
@@ -79,7 +79,7 @@ public class ListaEnlazada<E> extends AbstractList<E> {
     }
     public void clear(){
         tamano = 0;
-        this.priemro = null;
+        this.primero = null;
         this.ultimo = null;
     }
     protected class iterdaor implements ListIterator<E> {
